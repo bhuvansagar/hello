@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking System</title>
+    <link rel="stylesheet" href="bhuvan.css">
+</head>
+<body>
+    <header>
+        <h1>Smart Parking System</h1>
+    </header>
+    <main>
+        <div class="status">
+            <h2>Parking Status</h2>
+            <div id="parkingSlots">
+                <!-- Parking slots will be displayed here -->
+            </div>
+        </div>
+        <div class="controls">
+            <h2>Manage Parking</h2>
+            <form id="parkForm">
+                <input type="text" id="vehicleNumber" placeholder="Enter Vehicle Number" required>
+                <button type="button" onclick="parkVehicle()">Park Vehicle</button>
+                <button type="button" onclick="removeVehicle()">Remove Vehicle</button>
+                
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Smart Parking System</p>
+    </footer>
+    <script src="bhuvan.js"></script>
+    
+</body>
+</html>
