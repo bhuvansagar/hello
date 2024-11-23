@@ -1,4 +1,4 @@
-// Parking slot simulation
+
 let parkingSlots = [
     { id: 1, occupied: false, vehicle: "" },
     { id: 2, occupied: false, vehicle: "" },
@@ -47,5 +47,34 @@ function removeVehicle() {
     }
 }
 
-// Initial display
+
 updateParkingDisplay();
+
+
+
+// Token storage for verification
+let generatedToken = "";
+
+// Generate a random token
+function generateToken() {
+  return Math.random().toString(36).substr(2, 8).toUpperCase();
+}
+
+// Initialize QR Code generation and token display
+document.getElementById("generateBtn").addEventListener("click", () => {
+  // Generate a new token
+  generatedToken = generateToken();
+  
+  // Display the token
+  document.getElementById("tokenDisplay").textContent = `Token: ${generatedToken}`;
+
+  // Clear previous QR code
+  document.getElementById("qrcode").innerHTML = "";
+
+  // Generate a QR code with the token
+  new QRCode(document.getElementById("qrcode"), {
+    text: generatedToken,
+    width: 150,
+    height: 150,
+  });
+});
